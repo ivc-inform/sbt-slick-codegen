@@ -1,6 +1,7 @@
-import ScriptedPlugin._
-import ScriptedPlugin.autoImport._
+import sbt.ScriptedPlugin._
+import sbt.ScriptedPlugin.autoImport._
 
+import scalariform.formatter.preferences._
 scalariformItSettings
 
 sbtPlugin := true
