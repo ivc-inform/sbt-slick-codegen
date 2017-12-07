@@ -1,8 +1,10 @@
-scalariformSettings
+/*import scalariform.formatter.preferences._
+
+scalariformItSettings*/
 
 sbtPlugin := true
 
-name := """sbt-slick-codegen"""
+name := "sbt-slick-codegen"
 
 organization := "com.github.tototoshi"
 
@@ -51,7 +53,7 @@ pomExtra :=
     </developer>
   </developers>
 
-ScriptedPlugin.scriptedSettings
+/*ScriptedPlugin.scriptedSettings
 
 ScriptedPlugin.scriptedBufferLog := false
 
@@ -62,4 +64,4 @@ ScriptedPlugin.scriptedLaunchOpts ++= sys.process.javaVmArguments.filter(
 ScriptedPlugin.scriptedLaunchOpts ++= Seq(
   "-Dplugin.version=" + version.value,
   "-Dslick.version=" + slickVersion.value
-)
+)*/

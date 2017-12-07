@@ -3,7 +3,7 @@ package com.github.tototoshi.sbt.slick
 import sbt._
 import Keys._
 import slick.codegen.SourceCodeGenerator
-import slick.driver.JdbcProfile
+import slick.jdbc.JdbcProfile
 import slick.{ model => m }
 
 import scala.concurrent.Await
@@ -116,7 +116,7 @@ object CodegenPlugin extends sbt.AutoPlugin {
   }
 
   override lazy val projectSettings: Seq[Setting[_]] = Seq(
-    slickCodegenDriver := slick.driver.PostgresDriver,
+    slickCodegenDriver := slick.jdbc.PostgresProfile,
     slickCodegenJdbcDriver := "org.postgresql.Driver",
     slickCodegenDatabaseUrl := "Database url is not set",
     slickCodegenDatabaseUser := "Database user is not set",
