@@ -10,13 +10,7 @@ version := "1.2.2-SNAPSHOT"
 
 val slickVersion = SettingKey[String]("slickVersion")
 
-slickVersion := {
-  if((sbtVersion in pluginCrossBuild).value.startsWith("1.0.")) {
-    "3.2.0"
-  } else {
-    "3.1.0"
-  }
-}
+slickVersion := "3.2.1"
 
 libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick" % slickVersion.value,
@@ -26,10 +20,13 @@ libraryDependencies ++= Seq(
 publishMavenStyle := true
 
 publishTo := {
-  val nexus = "https://oss.sonatype.org/"
-  if (version.value.trim.endsWith("SNAPSHOT")) Some("snapshots" at nexus + "content/repositories/snapshots")
-  else Some("releases" at nexus + "service/local/staging/deploy/maven2")
+    val corporateRepo = "http://toucan.simplesys.lan/"
+    if (isSnapshot.value)
+        Some("snapshots" at corporateRepo + "artifactory/libs-snapshot-local")
+    else
+        Some("releases" at corporateRepo + "artifactory/libs-release-local")
 }
+credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
 
 publishArtifact in Test := false
 
