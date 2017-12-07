@@ -1,3 +1,6 @@
+import ScriptedPlugin._
+import ScriptedPlugin.autoImport._
+
 /*import scalariform.formatter.preferences._
 
 scalariformItSettings*/
@@ -53,15 +56,15 @@ pomExtra :=
     </developer>
   </developers>
 
-/*ScriptedPlugin.scriptedSettings
+projectSettings
 
-ScriptedPlugin.scriptedBufferLog := false
+scriptedBufferLog := false
 
-ScriptedPlugin.scriptedLaunchOpts ++= sys.process.javaVmArguments.filter(
+scriptedLaunchOpts ++= sys.process.javaVmArguments.filter(
   a => Seq("-Xmx", "-Xms", "-XX", "-Dsbt.log.noformat").exists(a.startsWith)
 )
 
-ScriptedPlugin.scriptedLaunchOpts ++= Seq(
+scriptedLaunchOpts ++= Seq(
   "-Dplugin.version=" + version.value,
   "-Dslick.version=" + slickVersion.value
-)*/
+)
